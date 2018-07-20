@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'gas.apps.GasConfig',
     'gas_dash.apps.GasDashConfig',
     'django.contrib.admin',
     'django.contrib.auth',
