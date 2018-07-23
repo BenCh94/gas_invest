@@ -1,9 +1,12 @@
-{% if stocks %}
-    <ul>
-    {% for stock in stocks %}
-        <li><a href="{% url 'gas_dash:stock' stock.id %}">{{ stock.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No stcoks are available.</p>
-{% endif %}
+{% extends 'gas_dash/base.html' %}
+{% block content %}
+	{% if stocks %}
+	    <ul>
+	    {% for stock in stocks %}
+	        <li><a href="{% url 'gas_dash:stock' stock.id %}">{{ stock.name }}</a></li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No stocks are available <a class="btn btn-success" href="{% url 'gas_dash:add_stock' %}">Add</a></p>
+	{% endif %}
+{% endblock content %}
