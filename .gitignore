@@ -82,8 +82,13 @@ target/
 *.log
 *.pot
 *.pyc
+**.pyc
 __pycache__/
+**.cpython-35.pyc
 local_settings.py
 
 .env
 db.sqlite3
+
+# Pycharm
+.idea/
