@@ -1,0 +1,9 @@
+{% if stocks %}
+    <ul>
+    {% for stock in stocks %}
+        <li><a href="{% url 'gas_dash:stock' stock.id %}">{{ stock.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No stcoks are available.</p>
+{% endif %}
