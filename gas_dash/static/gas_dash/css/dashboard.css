@@ -24,5 +24,6 @@ footer.footer {
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+    font-size: large;
 }
 
