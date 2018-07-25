@@ -34,16 +34,16 @@ def add_stock(request):
 	profile = current_user.profile
 	return render(request, 'gas_dash/add_stock.html')
 
-@login_required()
+@login_required(login_url='/gas_dash/login/')
 def stock(request, stock_id):
 	stock = get_object_or_404(Stock, pk=stock_id)
 	return render(request, 'gas_dash/stock_detail.html', {'stock': stock})
 
-@login_required()
+@login_required(login_url='/gas_dash/login/')
 def trades(request, stock_id):
 	return HttpResponse("You're looking at trades for %s." % stock_id)
 
-@login_required()
+@login_required(login_url='/gas_dash/login/')
 def trade(request, trade_id):
 	stocks = Stock.objects.all()
 	return HttpResponse("You're looking at trade %s." % trade_id)

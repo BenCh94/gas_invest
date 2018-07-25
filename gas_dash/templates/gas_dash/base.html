@@ -33,7 +33,7 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-toggleable-md navbar-dark bg-dark">
+    <nav class="navbar navbar-toggleable-md navbar-dark bg-dark" id="main_nav">
         <a class="navbar-brand" href="{% url 'gas_dash:index' %}">GAS Dash</a>
         <a class="btn btn-secondary" href="{% url 'gas_dash:logout' %}">Logout</a>
     </nav>
@@ -55,7 +55,7 @@
                 </ul>
               </div>
             </nav>
-            <main role="main" class="col-md-10">
+            <main role="main" class="col-md-10 offset-md-2">
                 {% block content %}
 
                 {% endblock content %}
@@ -64,10 +64,10 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer bg-dark">
-      <div class="container">
+    <footer class="footer row align-items-end">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <div class="col-lg-9 offset-lg-2 h-100 text-center text-lg-center my-auto">
             <ul class="list-inline mb-2">
               <li class="list-inline-item">
                 <a href="#">About</a>
@@ -84,11 +84,12 @@
               <li class="list-inline-item">
                 <a href="#">Privacy Policy</a>
               </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <p id="iex_attr">Data provided for free by <a href="https://iextrading.com/developer/" target="_blank">IEX</a></p>
+              </li>
             </ul>
             <p class="text-muted small mb-4 mb-lg-0">&copy; GAS Investments 2018. All Rights Reserved.</p>
-          </div>
-          <div class="col-lg-6 h-100 text-center text-lg-right my-auto text-muted">
-            <p id="iex_attr">Data provided for free by <a href="https://iextrading.com/developer/" target="_blank">IEX</a></p>
           </div>
         </div>
       </div>
