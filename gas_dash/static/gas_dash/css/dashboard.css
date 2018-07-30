@@ -27,3 +27,26 @@ footer.footer {
     font-size: large;
 }
 
+main {
+	padding-top: 2%;
+}
+
+/*Autocomplete serch bar settings */
+
+#autocompleteName{
+    width: 100%;
+    background: transparent;
+    color: #ffffff;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid #999;
+    padding: 5px;
+}
+
+.autocomplete-suggestions { border: 1px solid #999; background: #343a40; overflow: auto; }
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #4F575E; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }

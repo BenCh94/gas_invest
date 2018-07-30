@@ -45,7 +45,7 @@
               <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                      <a class="nav-link active" href="/">
+                      <a class="nav-link active" href="/gas_dash">
                         <span data-feather="home"></span>
                         Dashboard
                       </a>
@@ -98,7 +98,8 @@
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'gas_dash/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'gas_dash/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
+    {% block footer_files %}
+    {% endblock footer_files %}
   </body>
 
 </html>
