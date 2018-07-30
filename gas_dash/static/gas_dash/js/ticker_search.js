@@ -1,0 +1,5 @@
+
+
+$('#autocompleteName').autocomplete({
+	lookup: symbols
+})

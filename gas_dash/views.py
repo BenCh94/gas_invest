@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from gas_dash.forms import SignUpForm
 from django.http import Http404
-from .models import Stock
+from .forms import SignUpForm, StockForm
+from .models import Stock, Trade
+from .iex_requests import *
 
 # Create your views here.
 def signup(request):
@@ -17,11 +18,12 @@ def signup(request):
             login(request, user)
             return redirect('home')
     else:
-        form = SignUpForm()
-    return render(request, 'registration/signup.html', {'form': form})
+        signup_form = SignUpForm()
+    return render(request, 'registration/signup.html', {'form': signup_form})
 
 @login_required(login_url='/gas_dash/login/')
 def index(request):
+	""" The home dashboards view """
 	current_user = request.user
 	profile = current_user.profile
 	stocks = Stock.objects.filter(user_profile=profile)
@@ -30,9 +32,12 @@ def index(request):
 
 @login_required(login_url='/gas_dash/login/')
 def add_stock(request):
+	""" Function for adding a new stock to the dashboard: limited to stocks on IEX """
+	symbols = list_symbols()
 	current_user = request.user
 	profile = current_user.profile
-	return render(request, 'gas_dash/add_stock.html')
+	stock_form = StockForm()
+	return render(request, 'gas_dash/add_stock.html', {'form': stock_form, 'symbols': symbols})
 
 @login_required(login_url='/gas_dash/login/')
 def stock(request, stock_id):

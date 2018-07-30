@@ -7,6 +7,12 @@
 	    {% endfor %}
 	    </ul>
 	{% else %}
-	    <p>No stocks are available <a class="btn btn-success" href="{% url 'gas_dash:add_stock' %}">Add</a></p>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-4 col-offset-1">
+					<p>No stocks are available <a class="btn btn-success" href="{% url 'gas_dash:add_stock' %}">Add</a></p>
+				</div>
+			</div>
+		</div>
 	{% endif %}
 {% endblock content %}
