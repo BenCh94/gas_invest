@@ -45,10 +45,22 @@
               <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                   <li class="nav-item">
-                      <a class="nav-link active" href="/gas_dash">
+                      <a class="nav-link active" href="{% url 'gas_dash:index' %}">
                         <span data-feather="home"></span>
                         Dashboard
                       </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gas_dash:add_stock' %}">
+                    <span data-feather="home"></span>
+                      Add Stock
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                    <span data-feather="home"></span>
+                      Add Trade
+                    </a>
                   </li>
                   {% block sidebar_content %}
                   {% endblock sidebar_content %}
@@ -56,9 +68,11 @@
               </div>
             </nav>
             <main role="main" class="col-md-10 offset-md-2">
+              <div class="container-fluid">
                 {% block content %}
 
                 {% endblock content %}
+              </div>
             </main>
       </div>
     </div>
@@ -67,7 +81,7 @@
     <footer class="footer row align-items-end">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-9 offset-lg-2 h-100 text-center text-lg-center my-auto">
+          <div class="col-lg-9 offset-lg-2 h-100 text-center text-sm-center my-auto">
             <ul class="list-inline mb-2">
               <li class="list-inline-item">
                 <a href="#">About</a>

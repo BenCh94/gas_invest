@@ -1,1 +1,32 @@
-{{ stock }}
+{% extends 'gas_dash/base.html' %}
+{% block sidebar_content %}
+	<hr>
+	<li class="nav-item">
+        <h5 class="nav-link active" href="{% url 'gas_dash:index' %}">
+            {{ stock_data.stock.ticker }}
+        </h5>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'gas_dash:add_stock' %}">
+        <span data-feather="home"></span>
+            Financials
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'gas_dash:add_stock' %}">
+        <span data-feather="home"></span>
+            News & Content
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'gas_dash:add_stock' %}">
+        <span data-feather="home"></span>
+            ESG
+        </a>
+    </li>
+{% endblock sidebar_content %}
+{% block content %}
+<div class="row">
+	<img src="{{ stock_data.logo }}" alt="company_logo">
+</div>
+{% endblock content %}

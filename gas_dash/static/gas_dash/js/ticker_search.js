@@ -1,5 +1,9 @@
 
 
 $('#autocompleteName').autocomplete({
-	lookup: symbols
+	lookup: symbols,
+	onSelect: function (suggestion) {
+		var ticker = suggestion.data;
+		$('#id_ticker').val(ticker);
+	}
 })

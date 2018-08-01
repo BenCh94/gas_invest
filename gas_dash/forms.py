@@ -18,7 +18,7 @@ class SignUpForm(UserCreationForm):
 class StockForm(ModelForm):
 	class Meta:
 		model = Stock
-		fields = ('name', 'quantity', 'invested', 'fees_usd', 'start_date')
+		fields = ('name', 'status', 'ticker')
 
 	def __init__(self, *args, **kwargs):
 		super(StockForm, self).__init__(*args, **kwargs)
@@ -26,3 +26,4 @@ class StockForm(ModelForm):
 			'id': 'autocompleteName',
 			'placeholder': 'Start typing the company name...'
 			})
+		self.fields['ticker'].widget = forms.HiddenInput()

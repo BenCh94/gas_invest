@@ -31,22 +31,21 @@ main {
 	padding-top: 2%;
 }
 
-/*Autocomplete serch bar settings */
-
-#autocompleteName{
-    width: 100%;
-    background: transparent;
-    color: #ffffff;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    border-bottom: 1px solid #999;
-    padding: 5px;
+.stock_name {
+    display: block;
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.autocomplete-suggestions { border: 1px solid #999; background: #343a40; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #4F575E; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
-.autocomplete-group { padding: 2px 5px; }
-.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+.metrics {
+    background: transparent;
+}
+/*
+Once graphs have been added set stock list height based off graph height*/
+
+/*.stock_list {
+    height: 85%;
+    overflow-y: scroll;
+}*/
