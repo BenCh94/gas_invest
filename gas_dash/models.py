@@ -33,7 +33,7 @@ class Stock(models.Model):
 	quantity = models.IntegerField(blank=True, null=True)
 	invested = models.FloatField(blank=True, null=True)
 	fees_usd = models.FloatField(blank=True, null=True)
-	start_date = models.DateTimeField(blank=True, null=True)
+	start_date = models.DateField(blank=True, null=True)
 	status = models.CharField(max_length=2, choices=StockStatuses)
 	def __str__(self):
 		return self.name
@@ -42,12 +42,12 @@ class Stock(models.Model):
 class Trade(models.Model):
 	TradeTypes = [('b', 'Buy'), ('s','Sell')]
 	stock = models.ForeignKey(Stock, on_delete=models.CASCADE)
-	date = models.DateTimeField()
+	date = models.DateField()
 	trade_type = models.CharField(max_length=2, choices=TradeTypes)
 	amount = models.FloatField()
 	fees_usd = models.FloatField()
 	avg_price = models.FloatField()
 	def __str__(self):
-		return self.avg_price
+		return self.trade_type
 
 

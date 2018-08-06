@@ -39,6 +39,10 @@ main {
     text-overflow: ellipsis;
 }
 
+.stock_list {
+    background: transparent;
+}
+
 .metrics {
     background: transparent;
 }

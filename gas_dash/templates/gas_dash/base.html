@@ -57,7 +57,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{% url 'gas_dash:add_trade' %}">
                     <span data-feather="home"></span>
                       Add Trade
                     </a>
@@ -69,6 +69,18 @@
             </nav>
             <main role="main" class="col-md-10 offset-md-2">
               <div class="container-fluid">
+                {% if messages %}
+                <div class="messages col-md-4">
+                    {% for message in messages %}
+                    <div class="alert alert-{% if message.tags %}{{ message.tags }}{% endif %} alert-dismissible fade show">
+                      <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
                 {% block content %}
 
                 {% endblock content %}
