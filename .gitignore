@@ -88,6 +88,7 @@ __pycache__/
 local_settings.py
 
 .env
+.envrc
 db.sqlite3
 
 # Pycharm
