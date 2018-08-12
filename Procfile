@@ -1,1 +1,1 @@
-web: gunicorn gas_invest.wsgi:application --log-file -
+web: gunicorn gas_invest.wsgi --log-file -
