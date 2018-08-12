@@ -1,5 +1,6 @@
 import requests as r
 import pandas as pd 
+import json
 
 iex_base_url = "https://api.iextrading.com/1.0/"
 
@@ -28,3 +29,11 @@ def get_stock_logo(ticker):
     ticker_logo = r.get(iex_base_url+stock_logo_url)
     logo = ticker_logo.json()
     return logo['url']
+
+
+def stock_profile(ticker):
+    """ Batch request for company details and logo url """
+    batch_reqs = "/batch?types=company,logo,stats&range=5y"
+    profile_req = r.get(iex_base_url+"stock/"+ ticker + batch_reqs)
+    profile_data = json.loads(profile_req.text)
+    return profile_data

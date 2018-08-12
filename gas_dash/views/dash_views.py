@@ -20,11 +20,8 @@ def index(request):
 
 @login_required(login_url='/gas_dash/login/')
 def stock(request, stock_id):
-	stock_data = dict()
 	stock = get_object_or_404(Stock, pk=stock_id)
-	stock_data['price'] = stock_price(stock.ticker)
-	stock_data['company'] = get_stock_company(stock.ticker)
-	stock_data['logo'] = get_stock_logo(stock.ticker)
+	stock_data = stock_profile(stock.ticker)
 	stock_data['stock'] = stock
 	return render(request, 'gas_dash/stock_detail.html', {'stock_data': stock_data})
 
