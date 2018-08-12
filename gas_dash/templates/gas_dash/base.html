@@ -33,7 +33,7 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-toggleable-md navbar-dark bg-dark" id="main_nav">
+    <nav class="navbar navbar-toggleable-md navbar-dark bg-dark fixed-top" id="main_nav">
         <a class="navbar-brand" href="{% url 'gas_dash:index' %}">GAS Dash</a>
         <a class="btn btn-secondary" href="{% url 'gas_dash:logout' %}">Logout</a>
     </nav>
@@ -64,8 +64,13 @@
                   </li>
                   {% block sidebar_content %}
                   {% endblock sidebar_content %}
+                  <div id="loading-gif"  style="display:none;z-index: 2;">
+                    <h5 class="text-muted">Loading...</h5>
+                    <img src="{% static 'gas_dash/img/snail_loading.gif' %}" alt="loading-gif">
+                  </div>
                 </ul>
               </div>
+              <p class="text-muted small float-bottom" id="iex_attr">Data provided for free by <a href="https://iextrading.com/developer/" target="_blank">IEX</a></p>
             </nav>
             <main role="main" class="col-md-10 offset-md-2">
               <div class="container-fluid">
@@ -89,41 +94,10 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer row align-items-end">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-9 offset-lg-2 h-100 text-center text-sm-center my-auto">
-            <ul class="list-inline mb-2">
-              <li class="list-inline-item">
-                <a href="#">About</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Contact</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">&sdot;</li>
-              <li class="list-inline-item">
-                <p class="text-muted" id="iex_attr">Data provided for free by <a href="https://iextrading.com/developer/" target="_blank">IEX</a></p>
-              </li>
-            </ul>
-            <p class="text-muted small mb-4 mb-lg-0">&copy; GAS Investments 2018. All Rights Reserved.</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-
     <!-- Bootstrap core JavaScript -->
     <script src="{% static 'gas_dash/vendor/jquery/jquery.min.js' %}"></script>
     <script src="{% static 'gas_dash/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     {% block footer_files %}
     {% endblock footer_files %}
   </body>

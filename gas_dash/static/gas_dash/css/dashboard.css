@@ -6,14 +6,6 @@ body {
 	color: #ffffff;
   	min-height: 100vh;
 }
-footer.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 15px;
-    background-color: #4F575E;
-    padding-bottom: 1em;
-}
 .sidebar {
 	-webkit-box-shadow: inset 0px 1px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: inset 0px 1px 5px 0px rgba(0,0,0,0.75);
@@ -23,12 +15,24 @@ footer.footer {
     z-index: 1; /* Stay on top */
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    padding-top: 3%;
     font-size: large;
 }
 
 main {
-	padding-top: 2%;
+	padding-top: 3%;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #4F575E;
+    border: none;
+    color: #ffffff;
+}
+
+#iex_attr {
+    position: absolute;
+    bottom: 2px;
+    left:2px;
 }
 
 .stock_name {
@@ -53,3 +57,16 @@ Once graphs have been added set stock list height based off graph height*/
     height: 85%;
     overflow-y: scroll;
 }*/
+
+#price_charts{
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 1;
+}
+#company-logo {
+    width: 10%;
+    height: 10%;
+}
+
+.company
