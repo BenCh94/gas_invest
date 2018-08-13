@@ -1,3 +1,4 @@
+""" Requests to the IEX api """
 import requests as r
 import pandas as pd 
 import json
